@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+  "name": "PWA",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.io/pwa",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -38,6 +39,7 @@
     "workbox-streams": "^6.6.0"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -63,6 +65,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
-    "@types/ua-parser-js": "^0.7.39"
+    "@types/ua-parser-js": "^0.7.39",
+    "gh-pages": "^6.1.1"
   }
 }
