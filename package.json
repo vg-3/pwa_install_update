@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,10 +14,15 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.23",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "flowbite-react": "^0.7.6",
+    "moment": "^2.30.1",
+    "react": "^18.3.1",
+    "react-confirm-alert": "^3.0.6",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.1",
     "typescript": "^4.9.5",
+    "ua-parser-js": "^1.0.37",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.6.0",
     "workbox-broadcast-update": "^6.6.0",
@@ -51,5 +60,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.1",
+    "@types/ua-parser-js": "^0.7.39"
   }
 }
