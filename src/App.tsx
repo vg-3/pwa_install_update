@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
 import { InstallPWA } from "./components/InstallPWA";
 import "./App.css";
 
 function App() {
   const [prompt, setPrompt] = useState<any>(null);
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (event: any) => {
@@ -27,6 +37,10 @@ function App() {
 
       prompt.prompt();
     }
+  };
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setLanguage(event.target.value as string);
   };
 
   return (
@@ -51,6 +65,21 @@ function App() {
       >
         Progressive Web Application
       </Typography>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Language</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={language}
+          label="Language"
+          onChange={handleChange}
+        >
+          <MenuItem value={"en"}>English</MenuItem>
+          <MenuItem value={"es"}>Spanish</MenuItem>
+          <MenuItem value={"it"}>Italian</MenuItem>
+        </Select>
+        <Typography>{navigator.userAgent}</Typography>
+      </FormControl>
     </Box>
   );
 }
