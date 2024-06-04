@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   Button,
@@ -14,6 +15,7 @@ import { InstallPWA } from "./components/InstallPWA";
 import "./App.css";
 
 function App() {
+  const { i18n, t } = useTranslation();
   const [prompt, setPrompt] = useState<any>(null);
   const [language, setLanguage] = useState("en");
 
@@ -31,16 +33,10 @@ function App() {
     };
   }, [prompt]);
 
-  const installHandler = () => {
-    if (prompt) {
-      console.log("propmt");
-
-      prompt.prompt();
-    }
-  };
-
   const handleChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value as string);
+    const newLanguage = event.target.value as string;
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
   };
 
   return (
@@ -56,14 +52,14 @@ function App() {
         color: "#ffffff",
       }}
     >
-      <InstallPWA></InstallPWA>
+      {/* <InstallPWA></InstallPWA> */}
       <Typography
         variant="h3"
         sx={{
           textAlign: "center",
         }}
       >
-        Progressive Web Application
+        {t("title")}
       </Typography>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Language</InputLabel>

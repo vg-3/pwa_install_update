@@ -1,23 +1,19 @@
 import i18n from "i18next";
-import i18nBackend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import Backend from "i18next-http-backend";
 
-const getCurrentHost =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3001"
-    : "LINK TO PROD";
 i18n
-  .use(i18nBackend)
+  .use(Backend)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    debug: true,
     fallbackLng: "en",
-    lng: "en",
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      loadPath: `${getCurrentHost}/i18n/{{lng}}.json`,
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });
-
-export default i18n;
