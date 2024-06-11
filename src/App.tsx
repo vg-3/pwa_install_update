@@ -44,7 +44,7 @@ function App() {
       sx={{
         display: "flex",
         alignItems: "center",
-        background: "red",
+        background: "green",
         height: "100vh",
         width: "100vw",
         flexDirection: "column",
