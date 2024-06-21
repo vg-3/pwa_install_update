@@ -1,5 +1,5 @@
 {
-  "name": "PWA",
+  "name": "progressive-web-application",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://vg-3.github.io/pwa_install_update/",
@@ -45,7 +45,7 @@
   "scripts": {
     "deploy": "gh-pages -d build",
     "start": "env-cmd -f .env.process react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
