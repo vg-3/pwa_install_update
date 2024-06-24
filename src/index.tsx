@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "./i18n.ts";
-import Routes from "./Routes";
+// import Routes from "./Routes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <React.Suspense>
-      <Routes></Routes>
+      <App></App>
     </React.Suspense>
   </React.StrictMode>
 );
