@@ -18,6 +18,7 @@ function App() {
   const { i18n, t } = useTranslation();
   const [prompt, setPrompt] = useState<any>(null);
   const [language, setLanguage] = useState("en");
+  const [permission, setPermission] = useState<string>();
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (event: any) => {
@@ -37,6 +38,15 @@ function App() {
     const newLanguage = event.target.value as string;
     setLanguage(newLanguage);
     i18n.changeLanguage(newLanguage);
+  };
+
+  const requestPermission = () => {
+    Notification.requestPermission().then((newPermission) => {
+      if (newPermission === "granted") {
+        console.log("granted");
+      }
+      setPermission(newPermission);
+    });
   };
 
   return (
@@ -76,6 +86,7 @@ function App() {
         </Select>
         <Typography>{navigator.userAgent}</Typography>
       </FormControl>
+      <Button onClick={requestPermission}>Allow Notifications</Button>
     </Box>
   );
 }
