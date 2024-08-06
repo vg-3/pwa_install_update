@@ -13,8 +13,10 @@ import {
 } from "@mui/material";
 import { InstallPWA } from "./components/InstallPWA";
 import "./App.css";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
   const { i18n, t } = useTranslation();
   const [prompt, setPrompt] = useState<any>(null);
   const [language, setLanguage] = useState("en");
@@ -33,6 +35,10 @@ function App() {
       );
     };
   }, [prompt]);
+
+  useEffect(() => {
+    console.log(location.pathname);
+  }, []);
 
   const handleChange = (event: SelectChangeEvent) => {
     const newLanguage = event.target.value as string;
